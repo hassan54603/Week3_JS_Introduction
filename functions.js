@@ -2,7 +2,6 @@
 
 // Take the commented ES5 syntax and convert it to ES6 arrow Syntax
 
-
 /*
 
 ------------
@@ -28,8 +27,21 @@ let add = function (param1, param2) {
 add(1,2);
 
 */
-
-
+// step1
+let myFunction = () => {
+  console.log("Function was invoked!");
+};
+myFunction();
+// step2
+let anotherFunction = (param) => {
+  return param;
+};
+anotherFunction("Example");
+// step3
+let add = (param1, param2) => {
+  return param1 + param2;
+};
+add(1, 2);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task: Rock, Paper, Scissors - Let's play against the computer! 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -48,7 +60,41 @@ Use the game function below to do the following:
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
+// Define global variable to store computer's choice
+let computerChoice = "";
 
-function game(user, computer){
-    /*add your code here*/
+// Function to generate computer's choice
+function generateComputerChoice() {
+  const choices = ["rock", "paper", "scissors"];
+  const randomIndex = Math.floor(Math.random() * choices.length);
+  computerChoice = choices[randomIndex];
 }
+
+// Function to determine winner
+function game(user, computer) {
+  /*add your code here*/
+  // Generate computer's choice
+  generateComputerChoice();
+
+  // Check for tie
+  if (user === computerChoice) {
+    return "it's a tie";
+  }
+  // Check for user win
+  if (
+    (user === "rock" && computerChoice === "scissors") ||
+    (user === "paper" && computerChoice === "rock") ||
+    (user === "scissors" && computerChoice === "paper")
+  ) {
+    return "you win!";
+  }
+
+  // Otherwise, user loses
+  return "you lose!";
+}
+// Example usage
+const user = "rock";
+const result = game(user, computerChoice);
+console.log(
+  `User chose ${user}, computer chose ${computerChoice}, result: ${result}`
+);

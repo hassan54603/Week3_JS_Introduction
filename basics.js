@@ -8,8 +8,11 @@ Do the following:
 
    HINT: look up the Number method / Raadi Number Method wax la dhaho
 */
-
-
+// parseInt or number are same methods
+let string = "1999";
+let number = Number(string);
+console.log(number);
+// or another method you can use!
 /*
 Task: Mood Checker
 
@@ -19,7 +22,16 @@ Do the following:
    3. Else just print 'So moody!' / Hadii kale 'So Moody!' soo saar.
 
 */
-
+// step 1
+let mood = prompt("What is your mood today?");
+// step 2
+if (mood === "happy") {
+  console.log("Yay me too!");
+} else if (mood === "sad") {
+  console.log("Aw cheer up");
+} else {
+  console.log("So moody!");
+}
 
 /*
 Task: Odd or Even / kisi ama dhaban
@@ -33,10 +45,11 @@ Adigoo 'if/else' isticmaalaayo hubi in nambar uu yahay 'kisi ama dhaban', kadi c
 var num = 16; // You can change this number! / Number-kaan ku bilow
 
 // write your conditions here / Code-kaada halkaan ku qor
-
-
-
-
+if (num % 2 === 0) {
+  console.log("Number is even");
+} else {
+  console.log("Number is odd");
+}
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task: FIZZBUZZ 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -92,7 +105,19 @@ It's okay for it to be slow.
 
 
 */
-
+//step 1
+for (let i = 1; i <= 100; i++) {
+  //step 2
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (i % 3 === 0) {
+    console.log("Fizz");
+  } else if (i % 5 === 0) {
+    console.log("Buzz");
+  } else {
+    console.log(i);
+  }
+}
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
 
@@ -105,8 +130,16 @@ Using the vowelCounter function below do the following:
   HINT - you may need to study next week's content on arrays 
   HINT - try looking up the .includes() method
 */
-
-
-function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
+// youtube aa video aa icaawiyay
+function vowelCounter(str) {
+  /*add your code here*/
+  let count = 0;
+  let vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+  for (let i = 0; i < str.length; i++) {
+    if (vowels.includes(str[i])) {
+      count++;
+    }
+  }
+  return count;
 }
+console.log(vowelCounter("Hello World"));
